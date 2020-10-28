@@ -1,0 +1,3 @@
+recursive-include Shapely2IDF/Material * Shapely2IDF/example * Shapely2IDF/example/rddparse * 
+
+
