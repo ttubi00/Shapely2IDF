@@ -12,7 +12,7 @@ files = ['Material/*', 'example/*', 'example/rddparse/*']
 
 setup(
     name                = 'Shapely2IDF',
-    version             = '0.1',
+    version             = '0.11',
     description         = 'IDF generator based on Shapely Polygon (EnergyPlus)',
     author              = 'Pink_Blossom',
     author_email        = 'donghyuk.yi3014@snu.ac.kr',

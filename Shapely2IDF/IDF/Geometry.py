@@ -48,7 +48,12 @@ def build_mass(idf, n_floor, Floor_subs, Roof_subs, XY_rev, wwr = 0.5, zheight =
         new_zone(idf, zname)        
 
         # Setting Surface adjacent condition (floor, roof, ceiling)
-        if zname == 0: # Ground floor
+        if n_floor == 1:
+            const_floor, const_roof = 'exfloor', 'exroof'
+            surtype_floor, surtype_roof = 'Floor', 'Roof'    
+            bndcond_floor, bndcond_roof = 'Ground', 'Outdoors'            
+        
+        elif (n_floor != 1) & (zname == 0): # Ground floor
             const_floor, const_roof = 'exfloor', 'ceiling'
             surtype_floor, surtype_roof = 'Floor', 'Ceiling'    
             bndcond_floor, bndcond_roof = 'Ground', 'Surface'

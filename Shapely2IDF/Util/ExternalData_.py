@@ -12,7 +12,7 @@ from ..IDF.Schedule import schedule_compact_DayHour
 
 import pandas as pd
 import json
-
+import pdb
 
 
 def Gen_schedule_compact_ExternalForm(fname, sc_names):
@@ -68,7 +68,7 @@ def MakeDict_schedule_compact_From_ExternalForm(fname):
     
     Sche_Dicts = []
     TypeLimits = []
-    
+
     for idx, (sche_info, sche_name) in enumerate( zip(Sche_info, Sche_names) ):
         sche_dict = {}
         sche_dict['ObjName'] = sche_name
@@ -101,8 +101,8 @@ def MakeDict_schedule_compact_From_ExternalForm(fname):
                 # 특정 DayType를 만족하는 sub-data
                 day_data = DFcol_filter(month_data, 'DayType', Dtype)
                 
-                HourListZip.append( DFcol2List(day_data, 'Hour') )
-                ValueListZip.append( DFcol2List(day_data, 'Value') )                
+                HourListZip.append( DFcol2List(day_data, 'Hour', onlyunique = False))
+                ValueListZip.append( DFcol2List(day_data, 'Value', onlyunique = False))                
             
             # 월별 스케쥴 정보 취합 ->     
             sche_dict[month_str] = schedule_compact_DayHour(DayTypes, HourListZip, ValueListZip)

@@ -10,7 +10,7 @@ from ..Util.Value import hr_2digit
 from ..Util.IDF import kill_obj
 from copy import deepcopy
 import json
-
+import pdb
 
 #%%
 def get_schedule_compact(idf, objname):
@@ -115,6 +115,7 @@ def schedule_compact_DayHour(DayTypes = None, HourListZip = None, ValueListZip =
     err_raise2 = '[schedule_compact_DayHour] DayTypes length & ValueListZip length not equal. Please check input variables'
     err_raise3 = '[schedule_compact_DayHour] HourListZip length & ValueListZip length not equal. Please check input variables'
 
+    # pdb.set_trace()
     
     if isSame_DayTypes_HourListZip == False:
         raise Exception(err_raise1)
